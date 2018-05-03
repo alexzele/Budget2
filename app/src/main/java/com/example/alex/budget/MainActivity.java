@@ -2,7 +2,10 @@ package com.example.alex.budget;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -18,6 +21,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         displaySelectedScreen(R.id.nav_home);
+        Data data = Data.getData(getApplicationContext());
     }
 
     @Override

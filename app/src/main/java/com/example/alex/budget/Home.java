@@ -28,4 +28,6 @@ public class Home extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle(R.string.index);
     }
+
+
 }
